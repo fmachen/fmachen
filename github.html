@@ -1,0 +1,224 @@
+<html>
+
+<head>
+    <script src="https://cdn.jsdelivr.net/npm/particles.js@2.0.0/particles.min.js"></script>
+    <script src="https://unpkg.com/typewriter-effect@latest/dist/core.js"></script>
+</head>
+
+<body>
+    <!-- particles.js container -->
+    <div id="particles-js">
+        <div id="app">
+            <div id="line1"></div>
+            <div id="line2"></div>
+        </div>
+    </div>
+</body>
+
+<style>
+    /* ---- reset ---- */
+
+    @import url('https://fonts.googleapis.com/css?family=Roboto:400,700&display=swap');
+
+    body {
+        margin: 0;
+    }
+
+    canvas {
+        display: block;
+        position: absolute;
+        vertical-align: bottom;
+    }
+
+    /* ---- particles.js container ---- */
+
+    #particles-js {
+        display: flex;
+        position: absolute;
+        width: 100%;
+        height: 100%;
+        background-color: #fff;
+        background-image: url("");
+        background-repeat: no-repeat;
+        background-size: cover;
+        background-position: 50% 50%;
+        justify-content: center;
+        align-items: center;
+        text-align: center;
+    }
+
+    #app {
+        position: relative;
+        font-family: Roboto, sans-serif;
+    }
+
+    #line1 {
+        font-size: 70px;
+        line-height: 78px;
+        font-weight: 400;
+        color: #222;
+    }
+
+    #line2 {
+        margin-top: 70px;
+        font-size: 48px;
+        line-height: 56px;
+        font-weight: 400;
+        color: #777;
+    }
+</style>
+
+<script>
+    /* ---- particles.js config ---- */
+
+    particlesJS("particles-js", {
+        "particles": {
+            "number": {
+                "value": 84,
+                "density": {
+                    "enable": true,
+                    "value_area": 800
+                }
+            },
+            "color": {
+                "value": "#333"
+            },
+            "shape": {
+                "type": "circle",
+                "stroke": {
+                    "width": 0,
+                    "color": "#333"
+                },
+                "polygon": {
+                    "nb_sides": 5
+                },
+                "image": {
+                    "src": "img/github.svg",
+                    "width": 100,
+                    "height": 100
+                }
+            },
+            "opacity": {
+                "value": 0.5,
+                "random": false,
+                "anim": {
+                    "enable": false,
+                    "speed": 1,
+                    "opacity_min": 0.1,
+                    "sync": false
+                }
+            },
+            "size": {
+                "value": 3,
+                "random": true,
+                "anim": {
+                    "enable": false,
+                    "speed": 40,
+                    "size_min": 0.1,
+                    "sync": false
+                }
+            },
+            "line_linked": {
+                "enable": true,
+                "distance": 150,
+                "color": "#333",
+                "opacity": 0.4,
+                "width": 1
+            },
+            "move": {
+                "enable": true,
+                "speed": 6,
+                "direction": "none",
+                "random": false,
+                "straight": false,
+                "out_mode": "out",
+                "bounce": false,
+                "attract": {
+                    "enable": false,
+                    "rotateX": 600,
+                    "rotateY": 1200
+                }
+            }
+        },
+        "interactivity": {
+            "detect_on": "canvas",
+            "events": {
+                "onhover": {
+                    "enable": true,
+                    "mode": "grab"
+                },
+                "onclick": {
+                    "enable": true,
+                    "mode": "push"
+                },
+                "resize": true
+            },
+            "modes": {
+                "grab": {
+                    "distance": 140,
+                    "line_linked": {
+                        "opacity": 1
+                    }
+                },
+                "bubble": {
+                    "distance": 400,
+                    "size": 40,
+                    "duration": 2,
+                    "opacity": 8,
+                    "speed": 3
+                },
+                "repulse": {
+                    "distance": 200,
+                    "duration": 0.4
+                },
+                "push": {
+                    "particles_nb": 4
+                },
+                "remove": {
+                    "particles_nb": 2
+                }
+            }
+        },
+        "retina_detect": true
+    });
+
+    var typewriter = new Typewriter(document.getElementById('line1'), {
+        loop: true,
+        delay: 75,
+    });
+
+    typewriter
+        .changeDeleteSpeed(20)
+        .pauseFor(2500)
+        .typeString('Hey there, I\'m Florent.')
+        .pauseFor(1500)
+        .deleteChars(24)
+        .typeString('I\'m a software developer.')
+        .pauseFor(1500)
+        .deleteChars(25)
+        .typeString('Check out my work.')
+        .pauseFor(7000)
+        .start();
+
+    var subtypewriter = new Typewriter(document.getElementById('line2'), {
+        loop: true,
+        delay: 75,
+    });
+
+    subtypewriter
+        .changeDeleteSpeed(20)
+        .pauseFor(4400)
+        .typeString('Nice to meet you.')
+        .pauseFor(600)
+        .deleteChars(17)
+        .pauseFor(1800)
+        .typeString('In Lille, France.')
+        .pauseFor(1000)
+        .deleteChars(17)
+        .pauseFor(1400)
+        .typeString('Mainly web development, PHP - JS - HTML - CSS.')
+        .pauseFor(1500)
+        .start();
+</script>
+
+</html>
